@@ -117,8 +117,8 @@ for obj in emplist:
 
 print('Employee Count: ', e1.empCount)
 
-'''
 
+'''
 
 # -------------------------------------------------------------- Testing extEmployee
 
@@ -182,7 +182,7 @@ print("-"*50 + "Showing Polymorphism")
 e1 = Employee('Anil', 'Oracle', "1000000 INR")
 e2 = extEmployee('Anil', 35, 'Oracle', "1000000 INR")
 
-obj = e2
+obj = e1
 
 obj.printinfo()
 
