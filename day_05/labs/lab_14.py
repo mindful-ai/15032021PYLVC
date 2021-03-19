@@ -11,6 +11,17 @@ class student(object):
 
     # [TASK 2]Complete the functions/methods
 
+    # [TASK 3]Write python compatibility functions to get the output specified
+
+    def __str__(self):
+        pass
+
+    def __repr__(self):
+        pass
+
+    def __len__(self):
+        pass
+
     def setschoolname(self, schoolname):
         pass
 
