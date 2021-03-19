@@ -1,0 +1,45 @@
+class MyNumbers:
+
+    def __init__(self, max):
+        self.maxlimit = max
+        self.a = 1
+
+    def __str__(self):
+        return 'This is object of MyNumbers'
+
+    def __repr__(self):
+        return 'MyNumber Object with maximum limit ' + str(self.maxlimit)
+
+    def __len__(self):
+        return self.maxlimit
+
+    def __iter__(self):
+        self.a = 1
+        return self
+    
+    def __next__(self):
+        if self.a <= self.maxlimit:
+            x = self.a
+            self.a += 1
+            return x
+        else:
+            raise StopIteration
+
+obj = MyNumbers(10)
+#myiter = iter(obj)
+L = [MyNumbers(10), MyNumbers(20), MyNumbers(30)]
+
+print(obj)
+
+print(L)
+
+print(len(obj))
+
+print(next(obj))
+
+print(next(obj))
+
+print(next(obj))
+
+for i in obj:
+    print(i, end=' ')
