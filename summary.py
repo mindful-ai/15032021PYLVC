@@ -336,3 +336,53 @@ def setUp(self):
 
     def tearDown(self):
         pass
+    
+    
+# -----------------------------------------------------------------------------------------
+
+Python 3.7.3 (v3.7.3:ef4ec6ed12, Mar 25 2019, 22:22:05) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> L = [(x, x**2) for x in range(20) if x % 2 == 0]
+>>> L
+[(0, 0), (2, 4), (4, 16), (6, 36), (8, 64), (10, 100), (12, 144), (14, 196), (16, 256), (18, 324)]
+>>> # {}, (), [] => <expr> <loop> <condition>
+... 
+>>> L = ["red", "green", "blue", "orange", "yellow"]
+>>> D = { k:len(k) for k in L }
+>>> D
+{'red': 3, 'green': 5, 'blue': 4, 'orange': 6, 'yellow': 6}
+>>> import random
+>>> LR = [ random.randint(1, 100) for x in range(10) ]
+>>> LR
+[94, 84, 97, 80, 23, 68, 99, 10, 51, 25]
+>>> 
+>>> 
+>>> 
+>>> N = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+>>> L1 = ( x**2 for x in N if x % 3 == 0)
+>>> L1
+<generator object <genexpr> at 0x000001889A6269A8>
+>>> list(L1)
+[9, 36, 81]
+>>> L2 = ( x**2 if x % 3 == 0 else x for x in N)
+>>> L2
+<generator object <genexpr> at 0x000001889A626930>
+>>> list(L2)
+[1, 2, 9, 4, 5, 36, 7, 8, 81, 10]
+>>>
+>>> L3 = [ x for x in random.randint(1, 100) if x % 5 == 0}
+  File "<stdin>", line 1
+    L3 = [ x for x in random.randint(1, 100) if x % 5 == 0}
+                                                          ^
+SyntaxError: invalid syntax
+>>> L3 = [ x for x in random.randint(1, 100) if x % 5 == 0 ]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'int' object is not iterable
+>>> R = [random.randint(1, 100) for x in range(10)]          
+>>> R
+[56, 74, 35, 84, 50, 75, 38, 55, 11, 14]
+>>> R5 = [ x for x in [random.randint(1, 100) for i in range(30)] if x % 5 == 0]
+>>> R5
+[30, 50, 5, 20, 80, 80]
+>>>
